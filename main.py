@@ -17,7 +17,7 @@ def send_welcome2(message):
     else:
         try:
             today = datetime.today().strftime('%Y%m%d')
-            bank_api = f"https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode={message.text}&date={today}&json"
+            bank_api = f"https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json"
             r = requests.get(url = bank_api)
             data = r.json()
             value = data[0]["rate"]
